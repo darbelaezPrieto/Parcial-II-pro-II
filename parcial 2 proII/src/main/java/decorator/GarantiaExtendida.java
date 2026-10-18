@@ -1,6 +1,6 @@
 package decorator;
 
-// PATRÓN DECORATOR - Decorador concreto: suma el 10% del valor actual
+
 public class GarantiaExtendida extends ServicioAdicional {
 
     public GarantiaExtendida(Pedido pedido) {

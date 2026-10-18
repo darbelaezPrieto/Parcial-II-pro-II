@@ -2,8 +2,7 @@ package decorator;
 
 import composite.Componente;
 
-// PATRÓN DECORATOR - Componente concreto: el pedido sin ningún extra.
-// Su costo viene del producto o combo (Composite) que contiene.
+
 public class PedidoBase implements Pedido {
     private Componente contenido;
 

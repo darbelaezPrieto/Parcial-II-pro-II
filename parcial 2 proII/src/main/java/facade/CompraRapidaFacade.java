@@ -9,8 +9,7 @@ import decorator.Pedido;
 import decorator.PedidoBase;
 import proxy.ProxyPago;
 
-// PATRÓN FACADE - Fachada: un solo método sencillo que coordina todos los subsistemas
-// (Composite, Decorator, Adapter y Proxy) para que el Main no tenga que conocerlos.
+
 public class CompraRapidaFacade {
 
     public void ejecutarCompraRapida(Componente producto, String usuario,
@@ -18,11 +17,11 @@ public class CompraRapidaFacade {
 
         System.out.println("Cliente: " + usuario);
 
-        // 1. Mostrar el árbol de productos (Composite)
+
         System.out.println("Productos:");
         producto.mostrar("  ");
 
-        // 2. Armar el pedido y envolverlo con los extras elegidos (Decorator)
+
         Pedido pedido = new PedidoBase(producto);
         System.out.println("Calculo:");
         System.out.println("  Subtotal productos: $" + (long) pedido.getCosto());
@@ -43,8 +42,6 @@ public class CompraRapidaFacade {
         System.out.println("  Pedido: " + pedido.getDescripcion());
         System.out.println("  TOTAL A PAGAR: $" + (long) pedido.getCosto() + " COP");
 
-        // 3. Cobrar: el cobro pasa por la barrera de seguridad (Proxy),
-        //    que si todo está bien usa la pasarela de EE.UU. (Adapter)
         System.out.println("Cobro:");
         ProcesadorPago procesador = new ProxyPago();
         procesador.cobrarEnPesos(usuario, pedido.getCosto());

@@ -1,6 +1,6 @@
 package composite;
 
-// PATRÓN COMPOSITE - Hoja (Leaf): un artículo suelto
+
 public class ProductoIndividual implements Componente {
     private String nombre;
     private double precio;
